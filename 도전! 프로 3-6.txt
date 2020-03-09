@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void)
+{
+	int num, cnt, j, k, s, b;
+	s = b = cnt = 0;
+	int arr[2][3];
+
+	srand((int)time(NULL));
+
+
+	for (j = 0; j < 3; j++)
+	{
+		if(j>0)
+			do
+			{
+				arr[0][j] = (rand() % 10);
+			} while (arr[0][j] == arr[0][j - 1]);
+		
+		else
+			arr[0][j] = (rand() % 10);
+
+			printf("%d ", arr[0][j]);
+	}
+	while (s < 3)
+	{
+		s = b = 0;
+		printf("세개의 숫자 선택 : \n");
+
+		for (j = 0; j < 3; j++)
+		{
+			scanf_s("%d", &num);
+			arr[1][j] = num;
+		}
+
+
+		for (k = 0; k < 3; k++)
+		{
+			for (j = 0; j < 3; j++)
+			{
+				if (arr[1][k] == arr[0][j])
+				{
+					if (k == j)
+						s++;
+					else
+						b++;
+				}
+			}
+		}
+		cnt++;
+
+		printf("%d 번째 도전 결과 : %dstrike %dball\n", cnt, s, b);
+	}
+
+	return 0;
+}
+

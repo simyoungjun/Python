@@ -1,0 +1,72 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void)
+{
+	int num, i, a, b, seng=0, mu=0;
+
+
+	printf("가위는 1, 바위는 2, 보는 3. \n");
+	srand((int)time(NULL));
+	while (1)
+	{
+		for (i = 0; i < 2; i++)
+		{
+			do
+			{
+				num = (rand() % 4);
+			} while (num == 0);
+			if (i == 0)
+			{
+				switch (num)
+				{
+				case 1:
+					printf("당신은 가위 \n");
+					break;
+				case 2:
+					printf("당신은 바위\n");
+					break;
+				case 3:
+					printf("당신은 보 \n");
+					break;
+				}
+				a = num;
+			}
+			else
+			{
+				switch (num)
+				{
+				case 1:
+					printf("컴퓨터는 가위 \n");
+					break;
+				case 2:
+					printf("컴퓨터는 바위\n");
+					break;
+				case 3:
+					printf("컴퓨터는 보 \n");
+					break;
+				}
+				b = num;
+			}
+		}
+		if (a == b)
+		{
+			printf("비겼습니다.\n");
+			mu++;
+		}
+		else if ((a == 1 && b == 3) || (a == 2 && b == 1) || (a == 3 && b == 2))
+		{
+			printf("이겼습니다.\n");
+			seng++;
+		}
+		else
+		{
+			printf("졌습니다\n.");
+			break;
+		}
+	}
+	printf("%d승, %d무", seng, mu);
+
+	return 0;
+}
+

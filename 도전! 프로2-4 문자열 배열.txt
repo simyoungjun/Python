@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+
+
+int main(void)
+{
+	int leng;
+	char sen[10];
+	printf("문자열 입력 : \n");
+	scanf_s("%s", sen, 10);
+	leng = strlen(sen);
+	swap(sen, leng);
+	return 0;
+}
+
+int swap(char* sen, int leng)
+{
+	int i = 0;
+	while (i < leng / 2)
+	{
+		if (sen[i] == sen[leng - 1 - i])
+		{
+			i++;
+			continue;
+		}
+		else
+		{
+			printf("회문이 아닙니다\n");
+			return;
+		}
+	}
+	printf("회문입니다.\n");
+}

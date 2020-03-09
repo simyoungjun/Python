@@ -1,0 +1,57 @@
+
+#include<stdio.h>
+
+int main(void)
+{
+	int arr[10][10];
+	int i, j, n, num = 1, k;
+	i = j = 0;
+	k = 1;
+	printf("숫자를 입력하시오 : \n");
+	scanf_s("%d", &n);
+
+	put(arr, n, i, j, num, k);
+
+	for (i = 0; i < n; i++)
+	{
+		for (j = 0; j < n; j++)
+		{
+			printf(" %d ", arr[i][j]);
+		}
+		printf("\n");
+	}
+	return 0;
+}
+
+int put(int(*arr)[10], int n, int i, int j, int num, int k)
+{
+	int t, p = n * n;
+
+	while (num < p)
+	{
+		for (t = 1; t < n; t++)
+		{
+			arr[i][j] = num++;
+			j = j + k;
+		}
+
+		arr[i][j] = num++;
+
+		i = i + k;
+
+		n = n - 1;
+
+
+		for (t = 1; t < n; t++)
+		{
+			arr[i][j] = num++;
+			i = i + k;
+		}
+
+		arr[i][j] = num++;
+		j = j - k;
+		k = (-1) * k;
+	}
+
+	arr[i][j] = num;
+}

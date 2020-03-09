@@ -1,0 +1,83 @@
+#include<stdio.h>
+
+void change1(int(*arr)[4]);
+void change2(int(*arr)[4]);
+void change3(int(*arr)[4]);
+void change4(int(*arr)[4]);
+
+
+int main(void)
+{
+	int arr[4][4];
+	int i, j, num=1;
+
+	for (i = 0; i < 4; i++)
+	{
+		for (j = 0; j < 4; j++)
+		{
+			arr[i][j] = num++;
+		}
+	}
+	change1(arr);
+	printf("\n\n");
+	change2(arr);
+	printf("\n\n");
+	change3(arr);
+	printf("\n\n");
+	change4(arr);
+	printf("\n\n");
+	return 0;
+}
+
+void change1(int(*arr)[4])
+{
+	int i, j;
+	for (i = 0; i < 4; i++)
+	{
+		for (j = 0; j < 4; j++)
+		{
+			printf("%d ", arr[i][j]);
+		}
+		printf("\n");
+	}
+}
+
+void change2(int (*arr)[4])
+{
+	int i, j;
+	for (j=0; j<4; j++)
+	{
+		for (i = 3; i >-1; i--)
+		{
+			printf("%d ", arr[i][j]);
+		}
+		printf("\n");
+	}
+
+}
+
+void change3(int(*arr)[4])
+{
+	int i, j;
+	for (i = 3; i >-1; i--)
+	{
+		for (j = 3; j >-1 ; j--)
+		{
+			printf("%d ", arr[i][j]);
+		}
+		printf("\n");
+	}
+}
+
+void change4(int(*arr)[4])
+{
+	int i, j;
+	for (j = 3; j > -1; j--)
+	{
+		for (i = 0; i < 4; i++)
+		{
+			printf("%d ", arr[i][j]);
+		}
+		printf("\n");
+	}
+}
