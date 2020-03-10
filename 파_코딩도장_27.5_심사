@@ -1,0 +1,12 @@
+# Python
+
+with open('words.txt', 'r') as file:
+
+    lines = file.readlines()
+
+    lines=lines[0].split(' ')
+    
+    for i in lines:
+        if 'c' in i:
+            print(i.strip('.,'))
+
