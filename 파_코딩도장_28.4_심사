@@ -1,0 +1,11 @@
+# Python
+파이썬_코딩도장
+with open('words.txt', 'r') as file:
+    lines=file.readlines()
+
+    for a in range(len(lines)):
+        lines[a]=lines[a].strip('\n')
+    
+    for i in lines:
+        if list(i)==list(reversed(i)):
+            print(i)
