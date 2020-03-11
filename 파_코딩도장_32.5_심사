@@ -4,3 +4,7 @@
 files = input().split()
 
 list(map(lambda files: '{0:0>3d}.{1}'.format(int(files.split('.')[0]), files.split('.')[1]),files))
+
+
+#숫자일때  % 가능
+# %03d % 4(int)
