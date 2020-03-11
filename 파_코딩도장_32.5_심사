@@ -1,0 +1,6 @@
+# Python
+파이썬_코딩도장
+
+files = input().split()
+
+list(map(lambda files: '{0:0>3d}.{1}'.format(int(files.split('.')[0]), files.split('.')[1]),files))
