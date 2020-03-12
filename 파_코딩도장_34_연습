@@ -1,0 +1,16 @@
+# Python
+파이썬_코딩도장
+
+kwarg={'health':542.4, 'mana':210.3, 'armor':38}
+class Knight:
+    def __init__(self, **kwarg):
+        self.health = kwarg['health']
+        self.mana = kwarg['mana']
+        self.armor = kwarg['armor']
+    def slash(self):
+        print('베기')
+        
+x= Knight(**kwarg)
+
+print(x.health, x.mana, x.armor)
+x.slash()
